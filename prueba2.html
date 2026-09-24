@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio de prueba JS</title>
+    <body>
+        <script>
+            var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+            var entrada = prompt("Introduce tu número de DNI (sin letra):"); //prompt es como un input
+            var numeroDni = parseInt(entrada); //para que lo que escriba sea un dígito
+
+            if (numeroDni >= 1 && numeroDni <= 99999999 && entrada.length === 8) {
+                var resto = numeroDni % 23; //el resto de dividir el número del DNI entre 23 (la cantidad de letras que hay) Ej: 12345678 % 23 = 14-J
+                
+                alert("Tu DNI completo es: " + numeroDni + letras[resto]);
+                document.write("<h1>Tu DNI completo es: " + numeroDni + letras[resto] + "</h1>");
+            } 
+             else {
+                 alert("Error: El número introducido no es válido. Debe tener exactamente 8 dígitos y estar entre 1 y 99999999.");
+
+             }        
+        </script>
+    </body>
+</html>
