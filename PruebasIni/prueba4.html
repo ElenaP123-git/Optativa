@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+        <title>Prueba 4</title>
+        <body>
+                <script>
+                    //EJERCICIO 1
+
+                    var cadena = prompt("Introduce una cadena:");
+                    var tamaño = cadena.length;
+                    var caracter8 =cadena.charAt(7);
+                    var caracterT = cadena.includes("T"); //indexOf("T") !== -1; //Devuelve true si la cadena contiene la letra "T"
+                    var mayusculas = cadena.toUpperCase();
+                    var minusculas = cadena.toLowerCase();
+
+                    document.write("<p>La cadena introducida es: " + cadena + "</p>");
+                    document.write("<p>El tamaño de la cadena es: " + tamaño + "</p>");
+                    document.write("<p>El caracter en la posición 8 es: " + caracter8 + "</p>");
+                    if (caracterT) {
+                        document.write("<p>La cadena contiene la letra 'T'</p>");
+                    } else {
+                        document.write("<p>La cadena no contiene la letra 'T'</p>");
+                    } 
+                    document.write("<p>La cadena en mayúsculas es: " + mayusculas + "</p>");
+                    document.write("<p>La cadena en minúsculas es: " + minusculas + "</p>");
+
+                    //EJERCICIO 2
+
+                    var numeros = []; //creo lista vacía 
+                    for (var i = 0; i < 5; i++) {
+                        var numero = parseFloat(prompt("Introduce un número:"));
+                        numeros.push(numero); //los números se insertan a la lista
+                    }
+                    document.write("<p>Los números introducidos son: " + numeros.join(", ") + "</p>");
+                    
+                    var nuevoNumero = parseFloat(prompt("Introduce un nuevo número para añadir al array:"));
+                    numeros.push(nuevoNumero); //push para añadir un nuevo número al array
+                    document.write("<p>El nuevo array es: " + numeros.join(", ") + "</p>"); //el join() convierte el array en una cadena separada por comas
+
+                    var numerosReversa = numeros.slice().reverse(); //slice() para crear una copia del array original y luego reverse() para invertirlo
+                    document.write("<p>El array en orden inverso es: " + numerosReversa.join(", ") + "</p>");
+
+                    //EJERCICIO 3
+
+                    var fechaCumpleaños = new Date(prompt("Introduce tu fecha de cumpleaños (dd/mm/yyyy):"));
+                    var dia = fechaCumpleaños.getDate();
+                    var mes = fechaCumpleaños.getMonth() + 1; // Los meses en JavaScript son base 0, por lo que se suma 1
+                    var año = fechaCumpleaños.getFullYear();
+                    var fechaFormateada = dia + "/" + mes + "/" + año;
+                    console.log("La fecha de tu cumpleaños es: " + fechaFormateada);
+
+                </script>
+        </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba 5</title>
+</head>
+<body>
+    <h1>Párrafos</h1>
+
+    <script>
+       var cantidadParrafos = parseInt(prompt("¿Cuántos párrafos quieres añadir?"));
+        
+        // Seleccionamos el <h1> que YA existe en el HTML (usamos [0] porque devuelve un array/lista)
+        var nodoPadre = document.getElementsByTagName("h1")[0];
+
+        // Bucle para añadir cada párrafo al nodoPadre
+        for (var i = 0; i < cantidadParrafos; i++) {
+            var nodoHijo = document.createElement("p");
+            nodoHijo.textContent = "Este es el párrafo número " + (i + 1);
+            
+            nodoPadre.appendChild(nodoHijo); // Mete el párrafo dentro del <h1> existente
+        }
+
+        //borrar todos los hijos del nodo padre
+        for (var i = nodoPadre.childNodes.length - 1; i >= 0; i--) {
+            nodoPadre.removeChild(nodoPadre.childNodes[i]); //borrar todos los hijos del nodo padre
+        }
+        /*while (nodoPadre.firstChild) {
+    nodoPadre.removeChild(nodoPadre.firstChild); firstChild devuelve el primer hijo del nodo padre, si existe, y lo elimina. Si no hay hijos, devuelve null y el bucle termina.
+}*/
+        
+    </script>
+</body>
+</html>
