@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 10 y 11 - Catálogo de Productos</title>
+    <style>
+        .producto {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            width: 180px;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        /* Ajustamos el tamaño de las imágenes para que todas midan lo mismo */
+        .producto img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        /* Para cambiar el color del botón */
+        .disabled {
+            background-color: gray;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .enabled {
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo de Productos</h1>
+
+    <div id="contenedorProductos"></div>
+
+    <script src="ej10.js"></script>
+</body>
+</html>
