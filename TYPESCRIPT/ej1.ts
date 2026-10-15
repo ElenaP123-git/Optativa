@@ -22,5 +22,13 @@ finishedGame = false;
 ranking = [position, playerName, finishedGame];
 hallOfRanking.push(ranking);
 
+//Función printRanking 
+function printRanking(rankingArray: Ranking[]): void {
+    console.log("Ranking de jugadores:");
+    for (const [position, playerName, finishedGame] of rankingArray) {
+        console.log(`${position}. ${playerName} (${finishedGame ? 'Finalizó' : 'No finalizó'})`); //la ? evalúa si finishedGame es true o false y muestra el texto correspondiente
+    }
+}
+
 // Mostrar el resultado por consola
-console.log(hallOfRanking);
+printRanking(hallOfRanking);
