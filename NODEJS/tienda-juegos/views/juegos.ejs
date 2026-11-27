@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= titulo %></title>
+</head>
+<body>
+  <h1><%= titulo %></h1>
+
+  <p>
+    <a href="/juegos">Todos</a> |
+    <a href="/juegos/baratos">Baratos (&lt; 30 €)</a> |
+    <a href="/plataformas">Plataformas</a>
+  </p>
+
+  <% if (juegos.length === 0) { %>
+    <p>No hay juegos para mostrar.</p>
+  <% } else { %>
+    <ul>
+      <% for (var i = 0; i < juegos.length; i++) { %>
+        <li>
+          <strong><%= juegos[i].titulo %></strong> - <%= juegos[i].plataforma %> - <%= juegos[i].precio %> €
+        </li>
+      <% } %>
+    </ul>
+  <% } %>
+</body>
+</html>

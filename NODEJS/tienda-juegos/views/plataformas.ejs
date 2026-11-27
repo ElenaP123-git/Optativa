@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= titulo %></title>
+</head>
+<body>
+  <h1><%= titulo %></h1>
+
+  <p>
+    <a href="/juegos">Todos los juegos</a> |
+    <a href="/juegos/baratos">Juegos baratos</a> |
+    <a href="/plataformas">Plataformas</a>
+  </p>
+
+  <% if (plataformas && plataformas.length > 0) { %>
+    <ul>
+      <% for (var i = 0; i < plataformas.length; i++) { %>
+        <li><a href="/plataformas/<%= plataformas[i] %>"><%= plataformas[i] %></a></li>
+      <% } %>
+    </ul>
+  <% } else if (juegos && juegos.length > 0) { %>
+    <ul>
+      <% for (var j = 0; j < juegos.length; j++) { %>
+        <li><strong><%= juegos[j].titulo %></strong> - <%= juegos[j].precio %> €</li>
+      <% } %>
+    </ul>
+  <% } else { %>
+    <p>No hay datos para mostrar.</p>
+  <% } %>
+</body>
+</html>
